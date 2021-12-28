@@ -1,15 +1,25 @@
 <template>
   <div class="banner" :style="bannerStyles" :class="`banner__${position}`">
-    <slot></slot>
+    {{ message }}
   </div>
 </template>
+
 <script>
 const defaultStyles = {
   left: 0,
   right: 0,
 };
+/**
+ * Banner for the top or bottom of the page.
+ * @example
+ * <Banner message="banner component" :styles="{ 'text-align': 'center' }" position="top" />
+ */
 export default {
   props: {
+    /**
+     * The position for the banner.
+     * @values top, bottom
+     */
     position: {
       type: String,
       default: "top",
@@ -17,9 +27,21 @@ export default {
         return ["top", "bottom"].indexOf(position) > -1;
       },
     },
+    /**
+     * The styles for the banner.
+     * @values Object
+     */
     styles: {
       type: Object,
       default: () => ({}),
+    },
+    /**
+     * The message for the banner.
+     * @values String
+     */
+    message: {
+      type: String,
+      default: "",
     },
   },
   data() {
@@ -32,11 +54,11 @@ export default {
   },
 };
 </script>
+
 <style lang="scss" scoped>
 .banner {
   padding: 12px;
-  background-color: #fcf6cd;
-  color: #f6a623;
+  background-color: #7c7c7c;
   text-align: left;
   position: fixed;
   z-index: 2;
