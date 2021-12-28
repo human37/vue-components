@@ -2,30 +2,14 @@
 
 A component library using vue 3
 
-## Project setup
+## components
 
-```
-yarn install
-```
+- Banner
 
-### Compiles and hot-reloads for development
+## build
 
-```
-yarn serve
-```
+    $ npm run build-bundle
 
-### Compiles and minifies for production
+## compiling and hot reloading for development
 
-```
-yarn build
-```
-
-### Lints and fixes files
-
-```
-yarn lint
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
+    $ npm run serve
