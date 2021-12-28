@@ -10,6 +10,6 @@ A component library using vue 3
 
     $ npm run build-bundle
 
-## hot reloading for development
+## development
 
     $ npm run serve
