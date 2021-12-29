@@ -1,15 +1,17 @@
 <template>
-  <div
-    class="progress-bar"
-    :style="progressBarStyles"
-    :class="`progress-bar-size-${size}`"
-    :aria-valuemin="0"
-    :aria-valuemax="100"
-    :aria-valuenow="value"
-    aria-roledescription="progressbar"
-  >
-    <div class="progress-bar-value" :style="progressBarValueStyles"></div>
-  </div>
+  <label title="progress bar">
+    <div
+      class="progress-bar"
+      :style="progressBarStyles"
+      :class="`progress-bar-size-${size}`"
+      :aria-valuemin="0"
+      :aria-valuemax="100"
+      :aria-valuenow="value"
+      aria-roledescription="progress bar"
+    >
+      <div class="progress-bar-value" :style="progressBarValueStyles"></div>
+    </div>
+  </label>
 </template>
 
 <script>

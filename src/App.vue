@@ -1,23 +1,45 @@
 <template>
   <body>
-    <h1>{{ title }}</h1>
-    <Banner
-      message="banner component"
-      :styles="{ 'text-align': 'center' }"
-      position="bottom"
-    />
-    <div
-      style="
-        border: 1px solid gray;
-        padding: 20px;
-        width: 370px;
-        border-radius: 8px;
-      "
-    >
-      <div style="margin-bottom: 10px">
-        progress bar component: {{ value }}%
+    <h1>
+      <a href="https://github.com/human37/vue-components">{{ title }}</a>
+    </h1>
+    <div id="wrapper">
+      <Banner
+        message="banner component"
+        :styles="{ 'text-align': 'center' }"
+        position="bottom"
+      />
+      <div
+        style="
+          border: 1px solid gray;
+          padding: 10px;
+          margin: 20px;
+          width: 370px;
+          border-radius: 8px;
+        "
+      >
+        <div style="margin-bottom: 10px">
+          progress bar component: {{ value }}%
+        </div>
+        <ProgressBar size="large" :value="value" />
       </div>
-      <ProgressBar size="large" :value="value" />
+      <div
+        style="
+          border: 1px solid gray;
+          padding: 10px;
+          margin: 20px;
+          width: 370px;
+          border-radius: 8px;
+        "
+      >
+        <div style="margin-bottom: 10px">
+          select menu component: '{{ selectedItem || "null" }}' selected.
+        </div>
+        <Select
+          :items="['Luke Skywalker', 'Princess Lea', 'Yoda', 'Darth Vader']"
+          @itemSelected="handleItemSelect"
+        />
+      </div>
     </div>
   </body>
 </template>
@@ -25,16 +47,19 @@
 <script>
 import Banner from "./components/Banner.vue";
 import ProgressBar from "./components/ProgressBar.vue";
+import Select from "./components/Select.vue";
 
 export default {
   name: "vue-components",
   data: () => ({
     title: "@human37/vue-components",
     value: 0,
+    selectedItem: "",
   }),
   components: {
     Banner,
     ProgressBar,
+    Select,
   },
   methods: {
     fakeProgress() {
@@ -42,6 +67,10 @@ export default {
       if (this.value > 100) {
         this.value = 0;
       }
+    },
+    handleItemSelect(item) {
+      console.log("item selected:", item);
+      this.selectedItem = item;
     },
   },
   created() {
@@ -58,5 +87,17 @@ export default {
   text-align: center;
   color: rgb(53, 53, 53);
   margin-top: 60px;
+}
+#wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+a {
+  text-decoration: none;
+  color: inherit;
 }
 </style>
