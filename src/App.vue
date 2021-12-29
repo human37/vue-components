@@ -6,18 +6,34 @@
       :styles="{ 'text-align': 'center' }"
       position="bottom"
     />
+    <ProgressBar size="large" :value="value" />
   </body>
 </template>
 
 <script>
 import Banner from "./components/Banner.vue";
+import ProgressBar from "./components/ProgressBar.vue";
+
 export default {
-  name: "App",
+  name: "vue-components",
   data: () => ({
     title: "@human37/vue-components",
+    value: 0,
   }),
   components: {
     Banner,
+    ProgressBar,
+  },
+  methods: {
+    fakeProgress() {
+      this.value = this.value + 1;
+      if (this.value > 100) {
+        this.value = 0;
+      }
+    },
+  },
+  created() {
+    setInterval(this.fakeProgress, 50);
   },
 };
 </script>
