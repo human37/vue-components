@@ -6,7 +6,19 @@
       :styles="{ 'text-align': 'center' }"
       position="bottom"
     />
-    <ProgressBar size="large" :value="value" />
+    <div
+      style="
+        border: 1px solid gray;
+        padding: 20px;
+        width: 370px;
+        border-radius: 8px;
+      "
+    >
+      <div style="margin-bottom: 10px">
+        progress bar component: {{ value }}%
+      </div>
+      <ProgressBar size="large" :value="value" />
+    </div>
   </body>
 </template>
 
