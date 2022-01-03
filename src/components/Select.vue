@@ -85,14 +85,14 @@ select {
   padding-right: 16px;
   -moz-appearance: none;
   -webkit-appearance: none;
-  background-image: url("data:image/svg+xml;utf8,<svg fill='gray' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'> <path d='M1 1L7 7L13 1' stroke='%23656565' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");
   background-repeat: no-repeat, repeat;
-  background-position: right 0.7em top 50%, 0 0;
-  background-size: 1.7em auto, 100%;
+  background-position: right 16px top 50%, 0 0;
+  background-size: 12px auto, 100%;
   min-width: 100px;
 }
 select:hover {
   color: black;
-  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg width='14' height='8' viewBox='0 0 14 8' fill='none' xmlns='http://www.w3.org/2000/svg'> <path d='M1 1L7 7L13 1' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>");
 }
 </style>
