@@ -14,14 +14,16 @@
           border: 1px solid gray;
           padding: 10px;
           margin: 20px;
-          width: 370px;
           border-radius: 8px;
         "
       >
-        <div style="margin-bottom: 10px">
-          progress bar component: {{ value }}%
-        </div>
+        <div style="margin: 10px">progress bar component: {{ value }}%</div>
+        large:
         <ProgressBar size="large" :value="value" />
+        medium:
+        <ProgressBar size="medium" :value="value" />
+        small:
+        <ProgressBar size="small" :value="value" />
       </div>
       <div
         style="
