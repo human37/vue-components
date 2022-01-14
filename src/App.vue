@@ -20,10 +20,13 @@
         <div style="margin: 10px">progress bar component: {{ value }}%</div>
         large:
         <ProgressBar size="large" :value="value" />
+        <br />
         medium:
         <ProgressBar size="medium" :value="value" />
+        <br />
         small:
         <ProgressBar size="small" :value="value" />
+        <br />
       </div>
       <div
         style="
@@ -35,6 +38,48 @@
         "
       >
         <div style="margin-bottom: 10px">
+          icon input component: '{{ textInput || "nothing" }}' entered.
+        </div>
+        <div style="padding: 20px">
+          small (right-icon):
+          <IconInput
+            @value="textInput = $event"
+            rightIcon="account-search"
+            placeholder="search for an account..."
+            size="small"
+          />
+        </div>
+        <div style="padding: 20px">
+          large (left-icon):
+          <IconInput
+            @value="textInput = $event"
+            leftIcon="account-search"
+            placeholder="search for an account..."
+            size="large"
+          />
+        </div>
+
+        <div style="padding: 20px">
+          large (both-icons):
+          <IconInput
+            @value="textInput = $event"
+            leftIcon="account-search"
+            rightIcon="database"
+            placeholder="search for an account..."
+            size="large"
+          />
+        </div>
+      </div>
+      <div
+        style="
+          border: 1px solid gray;
+          padding: 10px;
+          margin: 20px;
+          width: 370px;
+          border-radius: 8px;
+        "
+      >
+        <div style="margin-bottom: 20px">
           select menu component: '{{ selectedItem || "null" }}' selected.
         </div>
         <Select
@@ -50,6 +95,7 @@
 import Banner from "./components/Banner.vue";
 import ProgressBar from "./components/ProgressBar.vue";
 import Select from "./components/Select.vue";
+import IconInput from "./components/IconInput.vue";
 
 export default {
   name: "vue-components",
@@ -57,11 +103,13 @@ export default {
     title: "@human37/vue-components",
     value: 0,
     selectedItem: "",
+    textInput: "",
   }),
   components: {
     Banner,
     ProgressBar,
     Select,
+    IconInput,
   },
   methods: {
     fakeProgress() {

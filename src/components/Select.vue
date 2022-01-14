@@ -36,7 +36,7 @@ export default {
       default: () => [],
     },
     /**
-     * The styles for the progress bar.
+     * The styles for the select menu.
      * @values Object
      */
     styles: {
