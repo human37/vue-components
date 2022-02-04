@@ -9,14 +9,7 @@
         :styles="{ 'text-align': 'center' }"
         position="bottom"
       />
-      <div
-        style="
-          border: 1px solid gray;
-          padding: 10px;
-          margin: 20px;
-          border-radius: 8px;
-        "
-      >
+      <div class="example">
         <div style="margin: 10px">progress bar component: {{ value }}%</div>
         large:
         <ProgressBar size="large" :value="value" />
@@ -28,15 +21,7 @@
         <ProgressBar size="small" :value="value" />
         <br />
       </div>
-      <div
-        style="
-          border: 1px solid gray;
-          padding: 10px;
-          margin: 20px;
-          width: 370px;
-          border-radius: 8px;
-        "
-      >
+      <div class="example">
         <div style="margin-bottom: 10px">
           icon input component: '{{ textInput || "nothing" }}' entered.
         </div>
@@ -70,21 +55,23 @@
           />
         </div>
       </div>
-      <div
-        style="
-          border: 1px solid gray;
-          padding: 10px;
-          margin: 20px;
-          width: 370px;
-          border-radius: 8px;
-        "
-      >
+      <div class="example">
         <div style="margin-bottom: 20px">
           select menu component: '{{ selectedItem || "null" }}' selected.
         </div>
         <Select
           :items="['Luke Skywalker', 'Princess Lea', 'Yoda', 'Darth Vader']"
           @itemSelected="handleItemSelect"
+        />
+      </div>
+      <div class="example">
+        <div style="margin-bottom: 20px">
+          tabs menu component: '{{ selectedTab || "null" }}' selected.
+        </div>
+        <Tabs
+          :items="['Jupiter', 'Saturn', 'Mars', 'Venus']"
+          :startIndex="5"
+          @itemSelected="handleTabSelect"
         />
       </div>
     </div>
@@ -96,6 +83,7 @@ import Banner from "./components/Banner.vue";
 import ProgressBar from "./components/ProgressBar.vue";
 import Select from "./components/Select.vue";
 import IconInput from "./components/IconInput.vue";
+import Tabs from "./components/Tabs.vue";
 
 export default {
   name: "vue-components",
@@ -103,6 +91,7 @@ export default {
     title: "@human37/vue-components",
     value: 0,
     selectedItem: "",
+    selectedTab: "",
     textInput: "",
   }),
   components: {
@@ -110,6 +99,7 @@ export default {
     ProgressBar,
     Select,
     IconInput,
+    Tabs,
   },
   methods: {
     fakeProgress() {
@@ -121,6 +111,10 @@ export default {
     handleItemSelect(item) {
       console.log("item selected:", item);
       this.selectedItem = item;
+    },
+    handleTabSelect(item) {
+      console.log("tab selected:", item);
+      this.selectedTab = item;
     },
   },
   created() {
@@ -140,14 +134,18 @@ export default {
 }
 #wrapper {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  padding-left: 60px;
-  padding-right: 60px;
 }
 a {
   text-decoration: none;
   color: inherit;
+}
+.example {
+  border: 1px solid gray;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 8px;
 }
 </style>
