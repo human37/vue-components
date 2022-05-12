@@ -5,6 +5,7 @@ import ProgressBar from "./ProgressBar.vue";
 import Select from "./Select.vue";
 import IconInput from "./IconInput.vue";
 import Tabs from "./Tabs.vue";
+import ProgressStepper from "./ProgressStepper.vue";
 
 const Components = {
   Banner,
@@ -12,6 +13,7 @@ const Components = {
   Select,
   IconInput,
   Tabs,
+  ProgressStepper,
 };
 
 Object.keys(Components).forEach((name) => {

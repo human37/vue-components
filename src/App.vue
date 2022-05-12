@@ -74,6 +74,20 @@
           @itemSelected="handleTabSelect"
         />
       </div>
+      <div class="example">
+        <div style="margin-bottom: 20px">
+          progress stepper component: <br />
+          <br />
+          change step:
+          <input
+            v-model="currentStep"
+            type="number"
+            min="0"
+            :max="steps.length"
+          />
+        </div>
+        <ProgressStepper :steps="steps" :currentStep="currentStep" />
+      </div>
     </div>
   </body>
 </template>
@@ -84,6 +98,7 @@ import ProgressBar from "./components/ProgressBar.vue";
 import Select from "./components/Select.vue";
 import IconInput from "./components/IconInput.vue";
 import Tabs from "./components/Tabs.vue";
+import ProgressStepper from "./components/ProgressStepper.vue";
 
 export default {
   name: "vue-components",
@@ -93,6 +108,8 @@ export default {
     selectedItem: "",
     selectedTab: "",
     textInput: "",
+    steps: ["Your basket", "Your order", "Payment", "Confirmation"],
+    currentStep: 2,
   }),
   components: {
     Banner,
@@ -100,6 +117,7 @@ export default {
     Select,
     IconInput,
     Tabs,
+    ProgressStepper,
   },
   methods: {
     fakeProgress() {
