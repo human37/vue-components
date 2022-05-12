@@ -26,6 +26,10 @@ A component library using vue 3 (all accessible components)
 
 ![image](https://user-images.githubusercontent.com/48261561/152563904-6ebb83e9-c656-422c-9365-0aa4c4145dec.png)
 
+- ProgressStepper - for showing progress in stages
+
+![image](https://user-images.githubusercontent.com/48261561/168142495-9ac583e1-3fbc-480c-9554-474c539b7379.png)
+
 ## build
 
     $ yarn build-bundle
